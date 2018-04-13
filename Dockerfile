@@ -48,7 +48,7 @@ RUN chmod +x /usr/local/bin/run.sh /etc/s6.d/*/* /etc/s6.d/.s6-svscan/*
 
 VOLUME /config
 
-COPY config.ini.php /config
+COPY config.ini.php matomo/config
 
 
 EXPOSE 8888

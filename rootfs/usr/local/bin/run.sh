@@ -13,10 +13,10 @@ sed -i -e "s/<UPLOAD_MAX_SIZE>/$UPLOAD_MAX_SIZE/g" /nginx/conf/nginx.conf /php/e
   -e "s/MYSQL_DB_PASS/${BRIQ_DB_PASS}/g" \
   -e "s/MYSQL_DB_NAME/${BRIQ_DB_NAME}/g" \
   -e "s/MATOMO_HOST/${BRIQ_HOST}/g" \
-  $HOME/config/config.ini.php
+  /matomo/config/config.ini.php
 
 
-ln -s /config/config.ini.php /matomo/config/config.ini.php
+#ln -s /config/config.ini.php /matomo/config/config.ini.php
 mv matomo fix && mv fix matomo # fix strange bug
 chown -R $UID:$GID /matomo /config /var/log /php /nginx /tmp /usr/share/GeoIP /etc/s6.d
 exec su-exec $UID:$GID /bin/s6-svscan /etc/s6.d
